@@ -14,17 +14,17 @@ public class Conexao {
     private Connection conexao;
 
     //metodo para criar a conexao com o banco de dados
-    public void getConexao() {
+    public Connection getConexao() {
 
         try {
             conexao = DriverManager.getConnection(url, user, password);
             System.out.println("Conexão bem sucedida!");
+            return conexao;
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Conexão mal sucedida!");
         }
+        return null;
     }
-
-
 
 }
